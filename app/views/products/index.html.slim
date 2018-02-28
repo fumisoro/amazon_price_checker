@@ -1,0 +1,14 @@
+table
+  tr
+    th 名前
+    th URL
+  - @products.each do |product|
+    tr
+      td = product.name
+      td = product.url
+
+= form_for @product do |f|
+  = f.text_field :name
+  = f.text_field :url
+  = f.submit
+
