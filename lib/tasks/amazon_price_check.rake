@@ -19,7 +19,6 @@ namespace :amazon_price_check do
       value = price.gsub(/[^\d]/, "").to_i
       # p doc.css("#priceblock_ourprice").text
       # p doc.css("#unqualifiedBuyBox > div > div.a-text-center.a-spacing-mini > span").text
-      binding.pry
       if product.prices.last.value > value
         text = <<-EOS
 <@#{Settings.slack.owner_id}>
